@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 010-create-certificates
+      author: dias
+      changes:
+        - createTable:
+            tableName: certificates
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: student_id
+                  type: BIGINT
+              - column:
+                  name: course_id
+                  type: BIGINT

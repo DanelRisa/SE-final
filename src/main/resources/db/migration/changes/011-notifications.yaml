@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 011-create-notifications
+      author: dias
+      changes:
+        - createTable:
+            tableName: notifications
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: message
+                  type: TEXT
+              - column:
+                  name: user_id
+                  type: BIGINT
