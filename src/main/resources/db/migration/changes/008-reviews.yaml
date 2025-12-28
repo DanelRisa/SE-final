@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 008-create-reviews
+      author: dias
+      changes:
+        - createTable:
+            tableName: reviews
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: rating
+                  type: INTEGER
+              - column:
+                  name: comment
+                  type: TEXT

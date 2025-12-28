@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 009-create-payments
+      author: dias
+      changes:
+        - createTable:
+            tableName: payments
+            columns:
+              - column:
+                  name: id
+                  type: BIGSERIAL
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: amount
+                  type: DOUBLE
+              - column:
+                  name: student_id
+                  type: BIGINT
