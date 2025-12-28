@@ -59,6 +59,8 @@ public class UserService {
         User user = new User();
         user.setEmail(dto.getEmail());
         user.setPassword(passwordEncoder.encode(dto.getPassword()));
+        user.setFirstName(dto.getFirstName() != null ? dto.getFirstName() : "");
+        user.setLastName(dto.getLastName() != null ? dto.getLastName() : "");
         user.setRole(User.Role.valueOf(dto.getRole()));
         user.setStatus(User.Status.ACTIVE);
         return userMapper.toResponseDTO(userRepository.save(user));
@@ -79,4 +81,5 @@ public class UserService {
         return userRepository.findAll().stream().map(userMapper::toResponseDTO).toList();
 
     }
+
 }
